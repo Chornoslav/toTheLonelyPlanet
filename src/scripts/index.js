@@ -1,13 +1,23 @@
-console.log('<|^_^|>');
 import $ from 'jquery'
-import {menuToggle} from './menuToggle.js';
 
 $(document).ready(function () {
     // prevent transition runing, IE fix - disable transition on preloading
     $("body").removeClass("preload");
 
-    //if($('#navbar-toggle').length > 0){
-    if($('#navbar-toggle').length > 0){
-        menuToggle();
-    }
+    // var root = document.documentElement;
+    // var body = document.querySelector('body');
+    //
+    // body.addEventListener('keydown', function (e) {
+    //     if(e.keyCode === 40 || e.keyCode === 83) {
+    //         root.style.setProperty('--starsPixels', 400 + "s");
+    //     }
+    // });
+    // body.addEventListener('keyup', function (e) {
+    //     stars();
+    // });
+    //
+    // function stars() {
+    //     root.style.setProperty('--starsPixels', 200 + "s");
+    // }
+    // stars();
 });

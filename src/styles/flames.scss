@@ -1,0 +1,84 @@
+#flame1{
+  animation: linear flame1 1s infinite;
+}
+@keyframes flame1 {
+  0% {
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+#flame2{
+  animation: linear flame2 1.4s infinite;
+}
+@keyframes flame2 {
+  0% {
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+#flame3{
+  animation: linear flame3 1s infinite;
+}
+@keyframes flame3 {
+  0% {
+    transform: translateY(2px);
+  }
+  50%{
+    transform: translateY(-3px);
+  }
+  100% {
+    transform: translateY(2px);
+  }
+}
+#flame4{
+  animation: linear flame4 .8s infinite;
+}
+@keyframes flame4 {
+  0% {
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+#flame5{
+  animation: linear flame5 1.5s infinite;
+}
+@keyframes flame5 {
+  0% {
+    transform: translateY(-2px);
+  }
+  50%{
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(-2px);
+  }
+}
+#flame6{
+  animation: linear flame6 1s infinite;
+}
+@keyframes flame6 {
+  0% {
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

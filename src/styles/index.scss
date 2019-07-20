@@ -1,19 +1,52 @@
 /* LIBRARIES */
 @import url("~normalize.css");
-@import url("~slick-carousel/slick/slick.css");
-@import url("~@fortawesome/fontawesome-free/css/fontawesome.css");
-@import url('~filepond/dist/filepond.min.css');
 
 
 /* FOUNDATION */
-@import "mixins/mixins";
 @import "base/colors";
 @import "base/responsivness";
 @import "base/variables";
-@import "base/typography";
 @import "base/general";
-@import "base/icons";
+@import "flames";
 
-header{
-  background-image: url('./../assets/background/angry-regular.svg');
+body{
+  background-image: url('./../assets/img/stars.png'), url('./../assets/img/space.png');
+  background-size: 40%, cover;
+  background-position-x: center;
+  animation: linear moveStarsY 200s infinite, linear moveStarsX 10s infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+.rocket {
+
+  svg{
+    height: 40vh;
+    width: auto;
+  }
+}
+@keyframes moveStarsY {
+  from {
+    background-position-y: 0;
+  }
+
+  to {
+    background-position-y: 30000px, 0;
+  }
+}
+@keyframes moveStarsX {
+  0% {
+    background-position-x: 0;
+  }
+
+  50% {
+    background-position-x: 4%, 0;
+  }
+
+  100% {
+    background-position-x: 0, 0;
+  }
 }
