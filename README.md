@@ -1,17 +1,2 @@
 # Rocket
-##https://tothelonelyplanet.netlify.com/
-
-The project run based on Webpack
-
-To start developing run\
-`npm start`
-
-To build the project to dist folder run\
-`npm run build`
-
-
-To add .svg as background image use only `assets/background` folder
-
-Project supports:
- - video files
- - SVG background
+https://tothelonelyplanet.netlify.com/
