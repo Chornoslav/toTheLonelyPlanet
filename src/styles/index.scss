@@ -1,33 +1,71 @@
 /* LIBRARIES */
 @import url("~normalize.css");
 
-
 /* FOUNDATION */
 @import "base/colors";
 @import "base/responsivness";
 @import "base/variables";
 @import "base/general";
-@import "flames";
+
+//TODO explosion animation. :after with white background for .3s then saucers should come from top and explode after some time
+//TODO add flowing animation of the main background
+//TODO add saucer rotation animation
 
 body{
-  background-image: url('./../assets/img/stars.png'), url('./../assets/img/space.png');
-  background-size: 40%, cover;
+  background-image: url('./../assets/img/space.png');
+  background-size: 150% 150%;
   background-position-x: center;
-  animation: linear moveStarsY 200s infinite, linear moveStarsX 10s infinite;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.rocket {
+.platform{
+  height: 150vh;
+  width: 150vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(var(--angle));
+  transition: transform var(--angle-animation) ease-in-out;
+  position: relative;
+  background-image: url('./../assets/img/stars.png');
+  background-size: 40%;
+  background-position-x: center;
+  animation:  linear moveStarsX 10s infinite;
 
-  svg{
-    height: 40vh;
-    width: auto;
+  &:after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    height: 150vh;
+    width: 150vw;
+    z-index: -1;
+    background-image: url('./../assets/img/stars.png');
+    background-size: 10%;
+    background-position-x: center;
+    animation: linear moveStarsY 300s infinite;
+  }
+
+  .rocket {
+    //improves rotate animations. moves spin center to the top
+    transform: translateY(14%);
+
+    svg{
+      height: 40vh;
+      width: auto;
+    }
   }
 }
+
+//animations
+@import "flames";
+
 @keyframes moveStarsY {
   from {
     background-position-y: 0;

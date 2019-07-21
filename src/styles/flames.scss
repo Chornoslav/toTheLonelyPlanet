@@ -1,5 +1,5 @@
 #flame1{
-  animation: linear flame1 1s infinite;
+  animation: linear flame1 calc(var(--multiplier) + 1s) infinite;
 }
 @keyframes flame1 {
   0% {
@@ -13,7 +13,7 @@
   }
 }
 #flame2{
-  animation: linear flame2 1.4s infinite;
+  animation: linear flame2 calc(var(--multiplier) + 1.4s) infinite;
 }
 @keyframes flame2 {
   0% {
@@ -27,7 +27,7 @@
   }
 }
 #flame3{
-  animation: linear flame3 1s infinite;
+  animation: linear flame3 calc(var(--multiplier) + 1s) infinite;
 }
 @keyframes flame3 {
   0% {
@@ -41,7 +41,7 @@
   }
 }
 #flame4{
-  animation: linear flame4 .8s infinite;
+  animation: linear flame4 calc(var(--multiplier) + .8s) infinite;
 }
 @keyframes flame4 {
   0% {
@@ -55,7 +55,7 @@
   }
 }
 #flame5{
-  animation: linear flame5 1.5s infinite;
+  animation: linear flame5 calc(var(--multiplier) + 1.5s) infinite;
 }
 @keyframes flame5 {
   0% {
@@ -69,7 +69,7 @@
   }
 }
 #flame6{
-  animation: linear flame6 1s infinite;
+  animation: linear flame6 calc(var(--multiplier) + 1s) infinite;
 }
 @keyframes flame6 {
   0% {
