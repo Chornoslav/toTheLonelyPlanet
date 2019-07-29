@@ -1,2 +1,2 @@
 # Rocket
-https://tothelonelyplanet.netlify.com/
+https://spacecraft.netlify.com
