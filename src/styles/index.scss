@@ -9,7 +9,6 @@
 
 //TODO explosion animation. :after with white background for .3s then saucers should come from top and explode after some time
 //TODO add flowing animation of the main background
-//TODO add saucer rotation animation
 
 body{
   background-image: url('./../assets/img/space.png');
@@ -54,7 +53,8 @@ body{
 
   .rocket {
     //improves rotate animations. moves spin center to the top
-    transform: translateY(14%);
+    transform: translateY(var(--boost)) ;
+    transition: transform var(--boost-animation) linear;
 
     svg{
       height: 40vh;
