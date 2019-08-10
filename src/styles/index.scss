@@ -17,7 +17,20 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  &.explosion:after{
+    content: '';
+    background-color: white;
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    animation: ease-in-out explosion .68s;
+  }
 }
+
 .platform{
   height: 150vh;
   width: 150vw;
@@ -33,6 +46,7 @@ body{
   animation:  linear moveStarsX 10s infinite;
 
   &:after{
+    //explosion screen blinking
     content: '';
     position: absolute;
     top: 50%;
@@ -52,10 +66,23 @@ body{
     //improves rotate animations. moves spin center to the top
     transform: translateY(var(--boost)) ;
     transition: transform var(--boost-animation) linear;
-
-    svg{
+    position: relative;
+    svg, .explsLayer{
       height: 40vh;
       width: auto;
+      transition: opacity .5s linear;
+    }
+    .explsLayer{
+      display: none;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: opacity linear .3s;
+      &:nth-of-type(8){
+        transition: opacity linear 1s;
+      }
     }
   }
 }
@@ -63,6 +90,16 @@ body{
 //animations
 @import "flames";
 
+@keyframes explosion {
+  0%  { background: linear-gradient(to right, #ffc500, #c21500); }
+  20% { background: linear-gradient(to right, #FFB88C, #DE6262); }
+  40% { background: linear-gradient(to right, #cbad6d, #d53369); }
+  60% { background: linear-gradient(to right, #ff5858, #f857a6); }
+  70% { background: linear-gradient(to right, #182848, #4b6cb7); }
+  80% { background: linear-gradient(to right, #0ABFBC, #FC354C); }
+  90% { background: linear-gradient(to right, #727a17, #414d0b); }
+  100%{ background: linear-gradient(to right, #e65245, #e43a15); }
+}
 @keyframes moveStarsY {
   from {
     background-position-y: 0;
