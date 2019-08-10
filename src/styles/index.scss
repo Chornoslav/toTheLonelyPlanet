@@ -7,9 +7,6 @@
 @import "base/variables";
 @import "base/general";
 
-//TODO explosion animation. :after with white background for .3s then saucers should come from top and explode after some time
-//TODO add flowing animation of the main background
-
 body{
   background-image: url('./../assets/img/space.png');
   background-size: 150% 150%;
@@ -27,6 +24,8 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: rotate(var(--angle));
+  transition: transform 1s ease-in-out;
   position: relative;
   background-image: url('./../assets/img/stars.png');
   background-size: 40%;

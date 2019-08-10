@@ -8,6 +8,7 @@ $(document).ready(function () {
     var body = document.querySelector('body');
     var rocket = document.querySelector('.rocket');
     var platform = document.querySelector('.platform');
+    var spinPlatform = document.querySelector('.spinPlatform');
     var rotationAngle = 0;
 
     var position = 10;
@@ -74,12 +75,12 @@ $(document).ready(function () {
     } rocketNitro();
 
     function rotateRocket() {
-        rotationAngle = rotationAngle + 10;
+        rotationAngle = rotationAngle + 8;
         if (rotationAngle >= 361){
             rotationAngle = 0;
             return;
         }
-        platform.style.transform = 'rotate(' + rotationAngle + 'deg)';
+        spinPlatform.style.transform = 'rotate(' + rotationAngle + 'deg)';
         requestAnimationFrame(rotateRocket);
     }
 });
