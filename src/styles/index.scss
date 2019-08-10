@@ -27,8 +27,6 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: rotate(var(--angle));
-  transition: transform var(--angle-animation) ease-in-out;
   position: relative;
   background-image: url('./../assets/img/stars.png');
   background-size: 40%;

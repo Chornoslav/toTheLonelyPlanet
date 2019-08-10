@@ -7,6 +7,8 @@ $(document).ready(function () {
     var root = document.documentElement;
     var body = document.querySelector('body');
     var rocket = document.querySelector('.rocket');
+    var platform = document.querySelector('.platform');
+    var rotationAngle = 0;
 
     var position = 10;
     var velocity;
@@ -41,17 +43,7 @@ $(document).ready(function () {
         }
     });
     body.addEventListener('keyup', function (e) {
-        if (e.keyCode === 82) {
-            root.style.setProperty('--angle', 360 + "deg");
-            setTimeout(function() {
-                root.style.setProperty('--angle-animation', 0 + "s");
-                resetStarsRotationAngle();
-                setTimeout(function() {
-                    fullRotationTransition();
-                }, 100);
-            }, 1000);
-            return
-        }
+        if (e.keyCode === 82) { rotateRocket() }
 
         //reset to default values
         if(e.keyCode === 39 || e.keyCode === 68 || e.keyCode === 65 || e.keyCode === 37) {
@@ -70,18 +62,24 @@ $(document).ready(function () {
         root.style.setProperty('--angle', 0);
     }    resetStarsRotationAngle();
 
-    function fullRotationTransition() {
-        root.style.setProperty('--angle-animation', 1 + "s");
-    }    fullRotationTransition();
-
     function animateStars() {
         position = position + velocity;
-        document.querySelector('.platform').style.backgroundPositionY = position + 'px';
+        platform.style.backgroundPositionY = position + 'px';
         requestAnimationFrame(animateStars);
     }
     animateStars();
 
     function rocketNitro() {
         root.style.setProperty('--boost', 14 + "%");
-    } rocketNitro()
+    } rocketNitro();
+
+    function rotateRocket() {
+        rotationAngle = rotationAngle + 10;
+        if (rotationAngle >= 361){
+            rotationAngle = 0;
+            return;
+        }
+        platform.style.transform = 'rotate(' + rotationAngle + 'deg)';
+        requestAnimationFrame(rotateRocket);
+    }
 });
