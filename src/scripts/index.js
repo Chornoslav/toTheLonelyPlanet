@@ -1,4 +1,6 @@
 import $ from 'jquery';
+import '../assets/img/favicon/favicon-32x32.png'
+import '../assets/img/favicon/favicon-16x16.png'
 
 $(document).ready(function () {
     // prevent transition runing, IE fix - disable transition on preloading
