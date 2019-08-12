@@ -39,6 +39,8 @@ $(document).ready(function () {
 
         if (e.keyCode === 87 || e.keyCode === 38) {
             increaseSpeed();
+            body.classList.add('vibrate-1');
+            rocketSVG.classList.add('vibrate-3')
         } else if (e.keyCode === 40 || e.keyCode === 83) {
             //decrease speed
             velocity = 2;
@@ -59,6 +61,8 @@ $(document).ready(function () {
             changeFlameAnimationSpeed();
             defaultVelocity();
             rocketNitro();
+            body.classList.remove('vibrate-1');
+            rocketSVG.classList.remove('vibrate-3')
         }
         if (e.keyCode === 32) { explosion() }
     });
@@ -118,19 +122,28 @@ $(document).ready(function () {
                 explosions.forEach(function(exp) {
                     exp.style.opacity = 0;
                 });
+                appearFromBottom();
             }, delay);
+        }
+        function appearFromBottom() {
+            setTimeout(function () {
+                rocket.classList.add('appearFromBottom');
+            }, 700)
         }
         function toggleRocket() {
             setTimeout(function () {
                 rocketSVG.style.opacity = '';
+                rocketSVG.classList.add('blink-1');
+                rocket.classList.remove('appearFromBottom');
                 increaseSpeed();
                 stopAcceleration();
-            }, delay + 1200);
+            }, delay + 3200);
         }
         function stopAcceleration(){
-            var accelerationDuration = 2000;
+            var accelerationDuration = 3500;
             setTimeout( function () {
                 changeFlameAnimationSpeed();
+                rocketSVG.classList.remove('blink-1');
                 defaultVelocity();
                 rocketNitro();
             }, accelerationDuration);
