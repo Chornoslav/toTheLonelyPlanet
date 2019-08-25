@@ -9,14 +9,14 @@
 
 body{
   background-image: url('./../assets/img/space.png');
-  background-size: 150% 150%;
-  background-position-x: center;
+  background-size: 150% 100%;
   height: 100vh;
   width: 100vw;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: linear mainBackground 120s infinite;
   &.explosion:after{
     content: '';
     background-color: white;
@@ -316,4 +316,10 @@ body{
   75% {
     opacity: 0;
   }
+}
+
+@keyframes mainBackground {
+  from  { background-position-x: 0; }
+  50% { background-position-x: 100%; }
+  to { background-position-x: 0; }
 }

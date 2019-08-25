@@ -14,6 +14,7 @@ $(document).ready(function () {
     var spinPlatform = document.querySelector('.spinPlatform');
     var explosions = document.querySelectorAll('.explsLayer');
     var rotationAngle = 0;
+    var exploded = false;
 
     var position = 10;
     var velocity;
@@ -64,7 +65,7 @@ $(document).ready(function () {
             body.classList.remove('vibrate-1');
             rocketSVG.classList.remove('vibrate-3')
         }
-        if (e.keyCode === 32) { explosion() }
+        if (e.keyCode === 32 && !exploded) { explosion(); }
     });
 
     function increaseSpeed(){
@@ -97,6 +98,7 @@ $(document).ready(function () {
         requestAnimationFrame(rotateRocket);
     }
     function explosion() {
+        exploded = true;
         body.classList.add('explosion');
         var animationDuration = 700;
         setTimeout(function () {
@@ -146,6 +148,7 @@ $(document).ready(function () {
                 rocketSVG.classList.remove('blink-1');
                 defaultVelocity();
                 rocketNitro();
+                exploded = false;
             }, accelerationDuration);
         }
     }
